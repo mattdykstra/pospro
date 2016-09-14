@@ -37,7 +37,7 @@ var app = {
         var networkState = navigator.network.connection.type;
         /* load local files if there is not network connection */
 	if (networkState == Connection.NONE) {
-		window.location="index.html"; 
+	//	window.location="index.html"; 
 	} else {
 		window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
 	}
