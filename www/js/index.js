@@ -34,6 +34,13 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        var networkState = checkConnection();
+        /* load local files if there is not network connection */
+		if (networkState == Connection.NONE) {
+			window.location="index.html"; 
+		} else {
+			window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
+		}
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
