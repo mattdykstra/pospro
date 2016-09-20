@@ -60,9 +60,9 @@ body {
 }
 
 button{
-	background-color:#333333;
+	background-color:#d9534f;
 	color:#FFFFFF;
-	font-size:24px;
+	font-size:18px;
 	margin-top:10px;
 }
 
@@ -89,13 +89,13 @@ h1 {
     border-radius:4px;
     -webkit-border-radius:4px;
     color:#FFFFFF;
-    font-size:12px;
+    font-size:18px;
     margin:0px 30px;
     padding:2px 0px;
 }
 
 .event.listening {
-    background-color:#333333;
+    background-color:#d9534f;
     display:block;
 }
 
