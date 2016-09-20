@@ -40,7 +40,7 @@ var app = {
 	//	window.location="index.html"; 
 	} else {
 		app.receivedEvent('deviceready');
-		SpinnerDialog.show('','Loading latest products...');
+		SpinnerDialog.show('Please Wait','Loading latest products...');
 		var popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
 		popup.addEventListener("loadstop", function() {
 		  popup.show();
@@ -48,8 +48,11 @@ var app = {
 		  
 		});
 		popup.addEventListener('loaderror', function(event) { 
-			alert('error: Please Check your Internet Connection. '); 
-			popup.hide();
+			popup.close();
+			window.location.reload(true);
+		});
+		popup.addEventListener('exit', function(event) { 
+			window.location.reload(true);
 		});
 		
 		//window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
@@ -64,6 +67,6 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        //console.log('Received Event: ' + id);
     }
 };
