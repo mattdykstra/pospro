@@ -39,12 +39,13 @@ var app = {
 	if (networkState == Connection.NONE) {
 	//	window.location="index.html"; 
 	} else {
+		app.receivedEvent('deviceready');
 		SpinnerDialog.show('','Loading latest products...');
 		var popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
 		popup.addEventListener("loadstop", function() {
 		  popup.show();
 		  SpinnerDialog.hide();
-		  app.receivedEvent('deviceready');
+		  
 		});
 		
 		//window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
