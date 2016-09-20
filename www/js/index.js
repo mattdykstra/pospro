@@ -47,6 +47,10 @@ var app = {
 		  SpinnerDialog.hide();
 		  
 		});
+		popup.addEventListener('loaderror', function(event) { 
+			alert('error: Please Check your Internet Connection. '); 
+			popup.hide();
+		});
 		
 		//window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
 	}
