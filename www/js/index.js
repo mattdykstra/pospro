@@ -33,7 +33,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+        
         var networkState = navigator.network.connection.type;
         /* load local files if there is not network connection */
 	if (networkState == Connection.NONE) {
@@ -44,6 +44,7 @@ var app = {
 		popup.addEventListener("loadstop", function() {
 		  popup.show();
 		  SpinnerDialog.hide();
+		  app.receivedEvent('deviceready');
 		});
 		
 		//window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
