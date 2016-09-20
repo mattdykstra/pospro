@@ -39,7 +39,8 @@ var app = {
 	if (networkState == Connection.NONE) {
 	//	window.location="index.html"; 
 	} else {
-		window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
+		cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no'); 
+		//window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
 	}
     },
     // Update DOM on a Received Event
