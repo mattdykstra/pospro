@@ -62,16 +62,16 @@ var app = {
     },
     online: function() {
 	SpinnerDialog.show('Please Wait','Loading latest products...');
-	var popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
-	popup.addEventListener("loadstop", function() {
-	  popup.show();
+	app.popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
+	app.popup.addEventListener("loadstop", function() {
+	  app.popup.show();
 	  SpinnerDialog.hide();
 		  
 	});  
 	     
      },
      offline: function() {
-	popup.close();
+	app.popup.close();
 	     
      },
     // Update DOM on a Received Event
