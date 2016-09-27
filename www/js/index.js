@@ -71,7 +71,7 @@ var app = {
 	     
      },
      offline: function() {
-	window.location.reload(true);
+	popup.close();
 	     
      },
     // Update DOM on a Received Event
