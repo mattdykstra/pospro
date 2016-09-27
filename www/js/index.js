@@ -26,7 +26,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
+        //document.addEventListener('deviceready', this.onDeviceReady, false);
 	document.addEventListener("online", this.online, false);
 	document.addEventListener("offline", this.offline, false);
     },
@@ -34,15 +34,15 @@ var app = {
     //
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
+   // onDeviceReady: function() {
         
-        var networkState = navigator.network.connection.type;
+       // var networkState = navigator.network.connection.type;
         /* load local files if there is not network connection */
-	if (networkState == Connection.NONE) {
+	//if (networkState == Connection.NONE) {
 	//	window.location="index.html"; 
-	} else {
-		app.receivedEvent('deviceready');
-		//SpinnerDialog.show('Please Wait','Loading latest products...');
+	//} else {
+	//	app.receivedEvent('deviceready');
+	//	//SpinnerDialog.show('Please Wait','Loading latest products...');
 		//var popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
 		//popup.addEventListener("loadstop", function() {
 		 // popup.show();
@@ -58,8 +58,8 @@ var app = {
 		//});
 		
 		//window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
-	}
-    },
+	//}
+   // },
     online: function() {
 	SpinnerDialog.show('Please Wait','Loading latest products...');
 	app.popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
