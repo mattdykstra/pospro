@@ -27,6 +27,8 @@ var app = {
     // 'load', 'deviceready', 'offline', and 'online'.
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
+	document.addEventListener("online", this.online, false);
+	document.addEventListener("offline", this.offline, false);
     },
     // deviceready Event Handler
     //
@@ -40,24 +42,38 @@ var app = {
 	//	window.location="index.html"; 
 	} else {
 		app.receivedEvent('deviceready');
-		SpinnerDialog.show('Please Wait','Loading latest products...');
-		var popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
-		popup.addEventListener("loadstop", function() {
-		  popup.show();
-		  SpinnerDialog.hide();
+		//SpinnerDialog.show('Please Wait','Loading latest products...');
+		//var popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
+		//popup.addEventListener("loadstop", function() {
+		 // popup.show();
+		  //SpinnerDialog.hide();
 		  
-		});
-		popup.addEventListener('loaderror', function(event) { 
-			popup.close();
-			window.location.reload(true);
-		});
-		popup.addEventListener('exit', function(event) { 
-			window.location.reload(true);
-		});
+		//});
+		//popup.addEventListener('loaderror', function(event) { 
+		//	popup.close();
+		//	window.location.reload(true);
+		//});
+		//popup.addEventListener('exit', function(event) { 
+		//	window.location.reload(true);
+		//});
 		
 		//window.open('https://hodgepodge.com.au/shop','_self','location=no'); 
 	}
     },
+    online: function() {
+	SpinnerDialog.show('Please Wait','Loading latest products...');
+	var popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
+	popup.addEventListener("loadstop", function() {
+	  popup.show();
+	  SpinnerDialog.hide();
+		  
+	});  
+	     
+     },
+     offline: function() {
+	window.location.reload(true);
+	     
+     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
