@@ -61,6 +61,12 @@ var app = {
 	//}
    // },
     online: function() {
+	var parentElement = document.getElementById('deviceready');
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
 	SpinnerDialog.show('Please Wait','Loading latest products...');
 	app.popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
 	app.popup.addEventListener("loadstop", function() {
@@ -72,11 +78,17 @@ var app = {
      },
      offline: function() {
 	app.popup.close();
+	var parentElement = document.getElementById('deviceready');
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:block;');
+        receivedElement.setAttribute('style', 'display:none;');
 	     
      },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
+        var parentElement = document.getElementById('deviceready');
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
