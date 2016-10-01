@@ -67,13 +67,14 @@ var app = {
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
-	SpinnerDialog.show('Please Wait','Loading latest products...');
-	app.popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_self','location=no,hidden=yes'); 
-	app.popup.addEventListener("loadstop", function() {
-	  app.popup.show();
-	  SpinnerDialog.hide();
+	SpinnerDialog.show('Please Wait','Loading latest products...',true);
+	app.popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_blank','location=no,toolbar=no'); 
+	app.popup.addEventListener("exit", function() {
+	  //app.popup.show();
+	  //SpinnerDialog.hide();
 		  
 	});  
+	SpinnerDialog.hide();
 	     
      },
      offline: function() {
@@ -97,4 +98,6 @@ var app = {
 
         //console.log('Received Event: ' + id);
     }
+    
+    
 };
