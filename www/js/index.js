@@ -68,7 +68,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 	SpinnerDialog.show('Please Wait','Loading latest products...',true);
-	app.popup = cordova.InAppBrowser.open('https://hodgepodge.com.au/shop','_blank','location=no,toolbar=no'); 
+	app.popup = cordova.InAppBrowser.open('http://pospro.co','_blank','location=no,toolbar=no'); 
 	app.popup.addEventListener("exit", function() {
 	  //app.popup.show();
 	  //SpinnerDialog.hide();
