@@ -70,7 +70,7 @@ var app = {
 	SpinnerDialog.show('Please Wait','Loading latest products...',true);
 	app.popup = cordova.InAppBrowser.open('http://pospro.co','_blank','location=no,toolbar=no,zoom=no'); 
 	app.popup.addEventListener("exit", function() {
-
+		alert('exit');
 	});  
 	SpinnerDialog.hide();
 	     
