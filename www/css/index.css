@@ -33,7 +33,7 @@ body {
 .event.received {
     display:none;
 }
-h3{ text-align:center }
+h3{ text-align:center; padding-top:10px; }
 
 @keyframes fade {
     from { opacity: 1.0; }
