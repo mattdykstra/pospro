@@ -4,8 +4,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.hodge"
-        versionCode= "102"
-        version   = "1.0.2">
+        versionCode= "103"
+        version   = "1.0.3">
 
     <name>POSPRO.co</name>
 
@@ -24,31 +24,11 @@
     <preference name="DisallowOverscroll"         value="true" />
     <!-- android: MIN SDK version supported on the target device. MAX version is blank by default. -->
     <preference name="android-minSdkVersion"      value="14" />
-
-    <!-- Define a specific version of PhoneGap to build into your app. -->
-    <!-- <preference name="phonegap-version"       value="cli-6.0.0" /> -->
-
+        
+    <preference name="Fullscreen" value="true" />
+        
     <!-- Plugins -->
     <!-- Core plugins -->
-    <!--
-    <plugin name="cordova-plugin-battery-status"      source="npm" spec="~1.1.1" />
-    <plugin name="cordova-plugin-camera"              source="npm" spec="~2.1.1" />
-    <plugin name="cordova-plugin-media-capture"       source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-console"             source="npm" spec="~1.0.2" />
-    <plugin name="cordova-plugin-contacts"            source="npm" spec="~2.0.1" />
-    <plugin name="cordova-plugin-device"              source="npm" spec="~1.1.1" />
-    <plugin name="cordova-plugin-device-motion"       source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-device-orientation"  source="npm" spec="~1.0.2" />
-    <plugin name="cordova-plugin-dialogs"             source="npm" spec="~1.2.0" />
-    <plugin name="cordova-plugin-file"                source="npm" spec="~4.1.1" />
-    <plugin name="cordova-plugin-file-transfer"       source="npm" spec="~1.5.0" />
-    <plugin name="cordova-plugin-geolocation"         source="npm" spec="~2.1.0" />
-    <plugin name="cordova-plugin-globalization"       source="npm" spec="~1.0.3" />
-    <plugin name="cordova-plugin-media"               source="npm" spec="~2.2.0" />
-    <plugin name="cordova-plugin-splashscreen"        source="npm" spec="~3.2.1" />
-    <plugin name="cordova-plugin-statusbar"           source="npm" spec="~2.1.2" />
-    <plugin name="cordova-plugin-vibration"           source="npm" spec="~2.1.0" />
-    -->
     <plugin name="cordova-plugin-network-information" source="npm" spec="~1.3.0" />
     <plugin name="cordova-plugin-whitelist"           source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-inappbrowser"        source="npm" spec="~1.5.0" />
@@ -109,7 +89,7 @@
     <!-- Added the following intents to support the removal of whitelist code from base cordova to a plugin -->
     <!-- Whitelist configuration. Refer to https://cordova.apache.org/docs/en/edge/guide_appdev_whitelist_index.md.html -->
 
-    <allow-intent href="http://pospro.co/*" />
+    <allow-intent href="*://pospro.co/*" />
     <allow-intent href="tel:*" />
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
@@ -121,8 +101,6 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <allow-navigation href="http://pospro.co/*" />
-        
-    <preference name="Fullscreen" value="true" />
+    <allow-navigation href="*://pospro.co/*" />
 
 </widget>
