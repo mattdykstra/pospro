@@ -53,6 +53,8 @@
     <plugin name="cordova-plugin-whitelist"           source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-inappbrowser"        source="npm" spec="~1.5.0" />
     <plugin name="cordova-plugin-progress-indicator"  source="npm" spec="~1.0.3" />
+    <plugin name="cordova-plugin-android-fullscreen"  source="npm" />
+        
 
     <!-- Define app icon and splashscreen for each platform. -->
     <icon src="icon.png" />
