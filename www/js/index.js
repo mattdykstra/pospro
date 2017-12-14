@@ -9,7 +9,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-        app.popup = cordova.InAppBrowser.open('http://pospro.co','_self','location=no,toolbar=no,zoom=no'); 
+        app.popup = window.inAppBrowserXwalk.open('http://pospro.co','_self','location=no,toolbar=no,zoom=no'); 
 	app.popup.addEventListener("exit", function() {
              navigator.app.exitApp();
 	});
